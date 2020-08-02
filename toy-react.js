@@ -14,6 +14,11 @@ export default {
       element = document.createElement(type)
 
       for (let name in props) {
+        if (name === 'className') {
+          element.setAttribute('class', props[name])
+          continue
+        }
+
         element.setAttribute(name, props[name])
       }
 
